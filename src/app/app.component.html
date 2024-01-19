@@ -1,0 +1,10 @@
+<div *ngIf="!isloggedin()">
+    <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="isloggedin()" style="height: 100%;">
+<app-toolbar (issideopened)="openside($event)"></app-toolbar>
+<app-sidenav [sideopened]="sideopened">
+    <router-outlet></router-outlet>
+</app-sidenav>
+</div>
