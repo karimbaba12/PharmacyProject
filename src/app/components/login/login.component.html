@@ -1,12 +1,9 @@
- <div class="d-flex align-items-start flex-column"><label for="username" >{{this.datenow |date:'short'}}</label>
-
-  </div>
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-md-6">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="username" >Username</label>
+          <label for="username">Username</label>
           <input
             type="text"
             class="form-control"
@@ -29,8 +26,11 @@
         <button type="submit" class="btn btn-primary" style="margin-top: 6px">
           Login
         </button>
-
       </form>
     </div>
   </div>
+</div>
+
+<div style="text-align: center">
+  <label for="username">{{ this.datenow | date : "short" }}</label>
 </div>

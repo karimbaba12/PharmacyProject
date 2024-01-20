@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { authGuard } from './core/guards/auth.guard';
 import { loginGuard } from './core/guards/login.guard';
 import { PersonComponent } from './components/person/person.component';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
     path: 'person',
     component: PersonComponent,
     canActivate: [authGuard],
+  },
+  {
+    path: 'breadcrumb',
+    component: BreadCrumbComponent,
   },
 ];
 

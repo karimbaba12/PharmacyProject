@@ -15,6 +15,7 @@ import { HighlightDirective } from './core/directives/highlight.directive';
 import { SquarePipe } from './core/pipes/square.pipe';
 import { PersonComponent } from './components/person/person.component';
 import { ConfirmationDialogueComponent } from './components/confirmation-dialogue/confirmation-dialogue.component';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 
 
 
@@ -30,6 +31,7 @@ import { ConfirmationDialogueComponent } from './components/confirmation-dialogu
     PersonComponent,
     ConfirmationDialogueComponent,
     PersonFormDialogComponent,
+    BreadCrumbComponent,
   ],
   imports: [
     BrowserModule,
