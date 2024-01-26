@@ -1,10 +1,9 @@
-.container{
-
- // background-image: src('C:\Pharmacy_project\Pharmacy\src\app\core\constants\pharmacy-management-system-by-asiqul-islam-1-2048.webp')
-background-color: burlywood;
- display: grid;
+.container {
+  background-color: burlywood;
+  display: grid;
   height: 300px;
   align-content: center;
-
-
+  padding: 200px !important;
+  margin: 50px;
+  margin-left: 100px;
 }

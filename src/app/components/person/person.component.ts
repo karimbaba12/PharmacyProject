@@ -10,11 +10,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { PersonService } from 'src/app/core/services/person.service';
 import { Person } from 'src/app/core/models/person';
 import { ConfirmationDialogueComponent } from '../confirmation-dialogue/confirmation-dialogue.component';
-import {PersonFormDialogComponent} from '../person-form-dialogue/person-form-dialogue.component';
+import { PersonFormDialogComponent } from '../person-form-dialogue/person-form-dialogue.component';
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
-  styleUrls: ['./person.component.css']
+  styleUrls: ['./person.component.css'],
 })
 export class PersonComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -37,13 +37,13 @@ export class PersonComponent implements OnInit {
     this.dataSource = new MatTableDataSource<Person>();
   }
 
-    edit(data: Person) {
+  edit(data: Person) {
     const dialogRef = this.dialog.open(PersonFormDialogComponent, {
       width: '400px',
-      data: data
+      data: data,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.personsService.edit(result);
       }
@@ -53,7 +53,7 @@ export class PersonComponent implements OnInit {
   delete(id: any) {
     const dialogRef = this.dialog.open(ConfirmationDialogueComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.personsService.remove(id);
       }
@@ -70,15 +70,14 @@ export class PersonComponent implements OnInit {
    */
   ngOnInit(): void {
     this.personsService.getAll();
-    this.serviceSubscribe = this.personsService.persons$.subscribe(res => {
+    this.serviceSubscribe = this.personsService.persons$.subscribe((res) => {
       this.dataSource.data = res;
-    })
+    });
   }
 
   ngOnDestroy(): void {
     this.serviceSubscribe.unsubscribe();
   }
 }
-
 
 export { PersonFormDialogComponent };

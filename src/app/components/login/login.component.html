@@ -1,43 +1,40 @@
-
-<body>
-  
-</body>
+<body></body>
 <div class="body">
-
   <div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-md-6">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            id="username"
-            formControlName="username"
-            placeholder="Enter username"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password" appHighlight>Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            formControlName="password"
-            placeholder="Password"
-          />
-        </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              formControlName="username"
+              placeholder="Enter username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <!-- we can add appHighlight  after for in label to highlight the name -->
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+          </div>
 
-        <button type="submit" class="btn btn-primary" style="margin-top: 6px">
-          Login
-        </button>
-      </form>
+          <button type="submit" class="btn btn-primary" style="margin-top: 6px">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-<div style="text-align: center">
-  <label for="username">{{ this.datenow | date : "short" }}</label>
-</div>
+  <div style="text-align: center">
+    <label for="username">{{ this.datenow | date : "short" }}</label>
+  </div>
 </div>

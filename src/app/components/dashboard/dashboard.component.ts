@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
-
+import { PieChartComponent } from '../pie-chart/pie-chart.component';
+import { percentageChartData } from 'src/app/core/constants/percentageChartData';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,7 +18,7 @@ export class DashboardComponent {
   chartOptions = {
     animationEnabled: true,
     title: {
-      text: 'Sales by Department',
+      text: 'Best seller by our Pharmacy',
     },
     data: [
       {
@@ -25,14 +26,18 @@ export class DashboardComponent {
         startAngle: -90,
         indexLabel: '{name}: {y}',
         yValueFormatString: "#,###.##'%'",
-        dataPoints: [
-          { y: 14.1, name: 'Antibiotics' },
-          { y: 28.2, name: 'Panadol' },
-          { y: 14.4, name: 'Dienxit' },
-          { y: 0, name: 'Panamax' },
-        ],
+        dataPoints: percentageChartData //[
+        //   { y: 14.1, name: 'Antibiotics' },
+        //   { y: 28.2, name: 'Panadol' },
+        //   { y: 14.4, name: 'Dienxit' },
+        //   { y: 20, name: 'Panamax' },
+        // ],
       },
     ],
   };
   // }
+
+  more() {
+    this.router.navigate(['/piechart']);
+  }
 }
