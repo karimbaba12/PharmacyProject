@@ -16,8 +16,9 @@ import { SquarePipe } from './core/pipes/square.pipe';
 import { PersonComponent } from './components/person/person.component';
 import { ConfirmationDialogueComponent } from './components/confirmation-dialogue/confirmation-dialogue.component';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
-
-
+import { DateTableComponent } from './components/date-table/date-table.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
     ConfirmationDialogueComponent,
     PersonFormDialogComponent,
     BreadCrumbComponent,
+    DateTableComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
     BrowserAnimationsModule,
     SharedModule,
     ToastrModule.forRoot(),
+    CanvasJSAngularChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

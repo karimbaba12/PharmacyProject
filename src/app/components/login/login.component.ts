@@ -11,15 +11,14 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class LoginComponent {
   loginForm?: any;
-datenow :Date;
+  datenow: Date;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
-  )
-  {
-    this.datenow=new Date();
+  ) {
+    this.datenow = new Date();
   }
 
   ngOnInit(): void {
@@ -33,13 +32,13 @@ datenow :Date;
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username').value;
       const password = this.loginForm.get('password').value;
-
       // Call the authentication service's login method
+
       if (this.authService.login(username, password)) {
         // Navigate to the ProductListComponent upon successful login
         this.router.navigate(['/dashboard']);
       } else {
-        this.toastr.error('username doesnt match', 'error');
+        this.toastr.error('username does not match', 'error');
       }
     }
   }
