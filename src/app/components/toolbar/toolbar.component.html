@@ -24,12 +24,22 @@
     class="example-icon favorite-icon"
     aria-label="Example icon-button with heart icon"
   >
-    logout
+    Login 
   </button>
-  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-  </button>
-  
-</div>
+  <span class="form-inline">
+    <select
+      class="from-controle"
+      #selectLang
+      (change)="switchLanguage(selectedLang.value)"
+    >
+      <option
+        *ngFor="let language of translate.getLangs()"
+        [value]="language"
+        [selected]="language === translate.currentLang"
+      >
+        {{ language }}
+      </option>
+    </select>
+  </span>
 </mat-toolbar>

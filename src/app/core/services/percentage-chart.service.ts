@@ -22,4 +22,21 @@ export class PercentageChartService {
   add(PercentageChart: PercentageChart) {
     this.PercentageCharts.push(PercentageChart);
   }
+
+
+  edit(person: PercentageChart) {
+    let findElem = this.PercentageCharts.find((p) => p.y == PercentageChart.y);
+    findElem!.y = PercentageChart.y;
+    findElem!.name = PercentageChart.name;
+    this.PercentageCharts$.next(this.PercentageCharts);
+  }
+
+  remove(y: number) {
+    this.PercentageCharts = this.PercentageCharts.filter((p) => {
+      return p.y != y;
+    });
+
+    this.PercentageCharts$.next(this.PercentageCharts);
+  }
 }
+

@@ -1,0 +1,69 @@
+<h1 mat-dialog-title>Edit Categorie</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="formInstance">
+    <div>
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>nameOfChart *</mat-label>
+        <input
+          matInput
+          type="text"
+          name="nameOfChart"
+          formControlName="nameOfChart"
+        />
+        <mat-error
+          *ngIf="
+        formInstance.controls['nameOfChart']?.errors?.['required']"
+          >field required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="mt-5">
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>percentage *</mat-label>
+        <input
+          matInput
+          type="number"
+          name="percentage"
+          formControlName="percentage"
+        />
+        <mat-error
+          *ngIf="
+        formInstance.controls['percentage']?.errors?.['required']"
+          >field required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="mt-5">
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>Categorie *</mat-label>
+        <mat-select name="Categorie" formControlName="Categorie">
+          <mat-option value="antibiotic">Antibiotic</mat-option>
+          <mat-option value="Panadol">Panadol</mat-option>
+          <mat-option value="Dentist">Dentist</mat-option>
+          <mat-option value="Nurse">Nurse</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="formInstance.controls['Categorie']?.errors?.['required']"
+          >field required
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+
+<div class="mt-5" mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="formInstance.dirty && formInstance.errors"
+    (click)="save()"
+    cdkFocusInitial
+  >
+    Yes
+  </button>
+  <button mat-raised-button mat-dialog-close>No</button>
+</div>
+

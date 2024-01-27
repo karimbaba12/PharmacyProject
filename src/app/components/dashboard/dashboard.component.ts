@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { PieChartComponent } from '../pie-chart/pie-chart.component';
 import { percentageChartData } from 'src/app/core/constants/percentageChartData';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -26,7 +27,7 @@ export class DashboardComponent {
         startAngle: -90,
         indexLabel: '{name}: {y}',
         yValueFormatString: "#,###.##'%'",
-        dataPoints: percentageChartData //[
+        dataPoints: percentageChartData, //[
         //   { y: 14.1, name: 'Antibiotics' },
         //   { y: 28.2, name: 'Panadol' },
         //   { y: 14.4, name: 'Dienxit' },
@@ -40,4 +41,9 @@ export class DashboardComponent {
   more() {
     this.router.navigate(['/piechart']);
   }
+
+  nav() {
+    this.router.navigate(['/navbar']);
+  }
+
 }
