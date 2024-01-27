@@ -1,7 +1,7 @@
 import { PersonFormDialogComponent } from './components/person-form-dialogue/person-form-dialogue.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,8 +19,15 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
 import { DateTableComponent } from './components/date-table/date-table.component';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
-import { ChartFormComponent } from './components/chart-form/chart-form.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+
+export function HttpLoaderFactory(http:HttpClient){
+return new TranslateHttpLoader(http);
+
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,6 @@ import { ChartFormComponent } from './components/chart-form/chart-form.component
     BreadCrumbComponent,
     DateTableComponent,
     PieChartComponent,
-    ChartFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,12 +50,18 @@ import { ChartFormComponent } from './components/chart-form/chart-form.component
     BrowserAnimationsModule,
     SharedModule,
     ToastrModule.forRoot(),
-    CanvasJSAngularChartsModule,
-    TranslateModule.forRoot(),
+CanvasJSAngularChartsModule,
 
-
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

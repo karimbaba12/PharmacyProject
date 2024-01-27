@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -8,31 +8,26 @@ import { AuthService } from 'src/app/core/services/auth.service';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
   @Output() issideopened = new EventEmitter<boolean>();
-selectedLang: any;
+  Lang: any;
   openside() {
     this.issideopened.emit();
   }
-
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    public translate: TranslateService,
-
-  ) {
-    this.translate.addLangs(['en', 'es']),
-    this.translate.setDefaultLang('en');
+  lang:string = '';
+  constructor(private authService: AuthService, private router: Router, private translateService:TranslateService) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+    this.lang = localStorage.getItem('lang') || 'en';
   }
   logout() {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
 
-
-  title = 'multilanguage';
-
-  switchLanguage(lang: string) {
-    this.translate.use(lang);
+  changeLang(lang: any) {
+    const selectedLanguage = lang.target.value;
+    localStorage.setItem('lang', selectedLanguage);
+    this.translateService.use(selectedLanguage);
   }
 }

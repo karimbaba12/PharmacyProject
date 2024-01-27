@@ -11,9 +11,10 @@ export class AppComponent {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
-  constructor(private authService: AuthService,public translate :TranslateService) {
-translate.addLangs(['en','es']),
-translate.setDefaultLang('en')
+  constructor(private authService: AuthService, private translateService:TranslateService) {
+
+    this.translateService.setDefaultLang('en');
+    this.translateService.use(localStorage.getItem('lang')||'en')
   }
   isloggedin() {
     return this.authService.isAuthenticatedUser();
@@ -21,17 +22,7 @@ translate.setDefaultLang('en')
   sideopened: boolean = true;
   openside(e: any) {
     this.sideopened = !this.sideopened;
-
   }
 
 
-  titles = 'multilingualapp';
-  switchLanguage(lang:string){
-    this.translate.use(lang)
-
-
-
-
-
-}
 }

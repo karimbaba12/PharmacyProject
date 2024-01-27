@@ -1,4 +1,3 @@
-
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +8,7 @@ import { loginGuard } from './core/guards/login.guard';
 import { PersonComponent } from './components/person/person.component';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { DateTableComponent } from './components/date-table/date-table.component';
-import { NavBarComponent} from '../app/components/nav-bar/nav-bar.component'
+
 
 const routes: Routes = [
   {
@@ -43,10 +42,6 @@ const routes: Routes = [
   {
     path: 'piechart',
     component: PieChartComponent,
-  },
-  {
-    path: 'navbar',
-    component: NavBarComponent,
   },
 ];
 

@@ -24,22 +24,17 @@
     class="example-icon favorite-icon"
     aria-label="Example icon-button with heart icon"
   >
-    Login 
+    logout
   </button>
+  <div class="dropdown">
 
-  <span class="form-inline">
-    <select
-      class="from-controle"
-      #selectLang
-      (change)="switchLanguage(selectedLang.value)"
-    >
-      <option
-        *ngFor="let language of translate.getLangs()"
-        [value]="language"
-        [selected]="language === translate.currentLang"
-      >
-        {{ language }}
-      </option>
-    </select>
-  </span>
+
+  <select class="form-select" (change)="changeLang($event)">\
+  <option [selected]="Lang==='en'" value="en">English</option>
+<option [selected]="Lang==='fr'" value="fr">Frensh</option>
+<option [selected]="Lang==='es'" value="es">Espaniol</option>
+
+</select>
+
+</div>
 </mat-toolbar>

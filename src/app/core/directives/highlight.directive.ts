@@ -12,9 +12,8 @@ export class HighlightDirective {
     this.eleRef.nativeElement.style.background = 'red';
   }
   @HostListener('mouseleave') onMouseLeave() {
-
     setTimeout(() => {
-this.eleRef.nativeElement.style.background = 'blue  ';
+      this.eleRef.nativeElement.style.background = 'blue  ';
     }, 5000);
   }
 }
