@@ -22,7 +22,13 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import { NavComponent } from './components/nav/nav.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -41,6 +47,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     BreadCrumbComponent,
     DateTableComponent,
     PieChartComponent,
+
+    NavigationBarComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +67,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent],

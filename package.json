@@ -30,6 +30,7 @@
     "angular-calendar": "^0.31.0",
     "angular-credit-cards": "^3.1.9",
     "bootstrap": "^5.3.2",
+    "md-menu": "^0.0.1-alpha.1",
     "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "sendbird": "^3.1.33",

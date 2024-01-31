@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  padding: .25rem;
+  flex-flow: row wrap;
+  background-color: lightgrey;
+}
+
+app-toolbar-selector {
+  display: flex;
+  min-width: 100%;
+  justify-content: flex-start;
+}
+
+
+.tool {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+}
