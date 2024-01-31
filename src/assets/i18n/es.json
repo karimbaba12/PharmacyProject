@@ -1,4 +1,12 @@
 {
-  "home": "frn",
-  "dashboard": " frn"
+  "tenant": "صيدلية البابا",
+  "dashboard": " الأساسية",
+  "ADD_PRODUCT": "إضافة منتج",
+  "CREDIT_CARD": "بطاقة",
+  "LOGOUT": "خروج",
+  "ENG": "انكليزي",
+  "FRN": "فرنسي",
+  "ESP": "اسباني",
+  "MORE": "المزيد",
+  "CATEGORIES" :"الأصناف"
 }

@@ -7,34 +7,40 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+
+  <span>{{'tenant'|translate}}</span>
+
   <span class="example-spacer"></span>
-  <button
+  <!-- <button
     mat-icon-button
     class="example-icon favorite-icon"
     aria-label="Example icon-button with heart icon"
   >
-    <mat-icon>favorite</mat-icon>
-  </button>
+    <mat-icon>favorite</mat-icon> -->
+  <!-- </button> -->
 
   <!-- <span class='material-icons' style="color: rgb(15, 55, 255)"> </span> -->
 
   <button
+    id="logout"
     (click)="logout()"
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
+    type="button"
+    class="btn btn-primary btn-sm"
+    style="background-color: transparent; color: black"
   >
-    logout
+    {{'LOGOUT'|translate}}
   </button>
   <div class="dropdown">
-
-
-  <select class="form-select" (change)="changeLang($event)">\
-  <option [selected]="Lang==='en'" value="en">English</option>
-<option [selected]="Lang==='fr'" value="fr">Frensh</option>
-<option [selected]="Lang==='es'" value="es">Espaniol</option>
-
-</select>
-
-</div>
+    <select
+      id="select"
+      class="btn btn-primary btn-sm"
+      style="background-color: transparent; color: black"
+      (change)="changeLang($event)"
+    >
+      \
+      <option [selected]="Lang === 'en'" value="en">{{'ENG'|translate}}</option>
+      <option [selected]="Lang === 'fr'" value="fr">{{'FRN'|translate}}</option>
+      <option [selected]="Lang === 'es'" value="es">{{'ESP'|translate}}</option>
+    </select>
+  </div>
 </mat-toolbar>

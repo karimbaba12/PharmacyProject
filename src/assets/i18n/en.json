@@ -1,5 +1,12 @@
 {
-  "home":"eng",
-  "dashboard":" eng"
-
+  "tenant": "BABA PHARMACY",
+  "dashboard": " Dashboard",
+  "ADD_PRODUCT": "ADD PRODUCT",
+  "CREDIT_CARD": "CREDIT_CARD",
+  "LOGOUT": "LOGOUT",
+  "ENG": "ENG",
+  "FRN": "FRN",
+  "ESP": "ESP",
+  "MORE": "MORE",
+  "CATEGORIES": "CATEGORIES"
 }

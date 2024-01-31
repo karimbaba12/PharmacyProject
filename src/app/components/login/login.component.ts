@@ -35,7 +35,10 @@ export class LoginComponent {
       // Call the authentication service's login method
 
       if (this.authService.login(username, password)) {
-        // Navigate to the ProductListComponent upon successful login
+        this.toastr.success('welcome to your website', 'success'),
+          {
+            timeOut: 3000,
+          };
         this.router.navigate(['/dashboard']);
       } else {
         this.toastr.error('username does not match', 'error');

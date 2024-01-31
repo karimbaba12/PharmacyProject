@@ -26,7 +26,7 @@ export class DashboardComponent {
         startAngle: -90,
         indexLabel: '{name}: {y}',
         yValueFormatString: "#,###.##'%'",
-        dataPoints: percentageChartData //[
+        dataPoints: percentageChartData, //[
         //   { y: 14.1, name: 'Antibiotics' },
         //   { y: 28.2, name: 'Panadol' },
         //   { y: 14.4, name: 'Dienxit' },
