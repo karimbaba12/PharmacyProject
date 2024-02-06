@@ -15,10 +15,8 @@ import { HighlightDirective } from './core/directives/highlight.directive';
 import { SquarePipe } from './core/pipes/square.pipe';
 import { PersonComponent } from './components/person/person.component';
 import { ConfirmationDialogueComponent } from './components/confirmation-dialogue/confirmation-dialogue.component';
-import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { DateTableComponent } from './components/date-table/date-table.component';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
-import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -44,9 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PersonComponent,
     ConfirmationDialogueComponent,
     PersonFormDialogComponent,
-    BreadCrumbComponent,
     DateTableComponent,
-    PieChartComponent,
 
     NavigationBarComponent,
     NavComponent,

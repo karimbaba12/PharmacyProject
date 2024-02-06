@@ -8,7 +8,7 @@
     <mat-icon>menu</mat-icon>
   </button>
 
-  <span>{{'tenant'|translate}}</span>
+  <span>{{ "tenant" | translate }}</span>
 
   <span class="example-spacer"></span>
   <!-- <button
@@ -28,7 +28,7 @@
     class="btn btn-primary btn-sm"
     style="background-color: transparent; color: black"
   >
-    {{'LOGOUT'|translate}}
+    {{ "LOGOUT" | translate }}
   </button>
   <div class="dropdown">
     <select
@@ -38,9 +38,12 @@
       (change)="changeLang($event)"
     >
       \
-      <option [selected]="Lang === 'en'" value="en">{{'ENG'|translate}}</option>
-      <option [selected]="Lang === 'fr'" value="fr">{{'FRN'|translate}}</option>
-      <option [selected]="Lang === 'es'" value="es">{{'ESP'|translate}}</option>
+      <option [selected]="Lang === 'en'" value="en">
+        {{ "ENG" | translate }}
+      </option>
+      <option [selected]="Lang === 'ara'" value="ara">
+        {{ "ARA" | translate }}
+      </option>
     </select>
   </div>
 </mat-toolbar>

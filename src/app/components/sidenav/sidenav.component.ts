@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class SidenavComponent {
   @Input() sideopened: boolean = true;
+
 }

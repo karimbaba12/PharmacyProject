@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { AfterViewInit, OnDestroy, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
-
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
-import { MatDialog } from '@angular/material/dialog';
-
-import { PersonService } from 'src/app/core/services/person.service';
 import { Person } from 'src/app/core/models/person';
-import { ConfirmationDialogueComponent } from '../confirmation-dialogue/confirmation-dialogue.component';
+import { PersonService } from 'src/app/core/services/person.service';
+
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+
+import {
+    ConfirmationDialogueComponent
+} from '../confirmation-dialogue/confirmation-dialogue.component';
 import { PersonFormDialogComponent } from '../person-form-dialogue/person-form-dialogue.component';
+
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
